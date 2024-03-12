@@ -14,7 +14,7 @@ import { isCacheableValue } from './common/is-cacheable-value';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: __dirname + '/../../public',
+      rootPath: __dirname + '/../public',
       renderPath: '/',
     }),
     EventEmitterModule.forRoot({

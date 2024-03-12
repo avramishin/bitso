@@ -2,11 +2,11 @@ import knex from 'knex';
 import path from 'path';
 
 import { Global, Module } from '@nestjs/common';
-import { config } from '../../config';
+import { config } from '../config';
 import { waitFor } from '../common/wait-for';
 import { mkdirSync, existsSync, writeFileSync } from 'fs';
 
-const dbFile = path.resolve(`${__dirname}/../../../storage/db.sqlite`);
+const dbFile = path.resolve(`${__dirname}/../../storage/db.sqlite`);
 
 if (!existsSync(path.dirname(dbFile))) {
   mkdirSync(path.dirname(dbFile), { recursive: true });

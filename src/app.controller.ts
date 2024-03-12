@@ -14,7 +14,7 @@ export class AppController {
   @UseFilters(new BasicAuthExceptionFilter())
   @UseGuards(BasicAuthGuard)
   async adminIndexPage(@CurrentAuthToken() authToken: string) {
-    const indexFile = path.resolve(`${__dirname}/../../public/index.html`);
+    const indexFile = path.resolve(`${__dirname}/../public/index.html`);
     return readFileSync(indexFile)
       .toString()
       .replace('{{AUTH_TOKEN}}', authToken);

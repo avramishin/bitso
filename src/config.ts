@@ -2,6 +2,10 @@ const api_key = 'cfda9da8-1c8a-443a-8a33-da676540fa84';
 const api_secret = 'WWXKIAYXI6EDJTG0WN0LDRRYQ4TZ4N5MS1KHZTNCHWP';
 
 export const config = {
+  db: {
+    migrate: true,
+  },
+
   admins: [
     {
       username: 'admin',
