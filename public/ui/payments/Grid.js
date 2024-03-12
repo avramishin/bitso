@@ -82,6 +82,29 @@ Ext.define('SS.payments.Grid', {
     },
 
     {
+      text: 'Method',
+      sortable: true,
+      dataIndex: 'method_name',
+      flex: 1,
+      menuDisabled: true,
+    },
+    {
+      text: 'RFC',
+      sortable: true,
+      dataIndex: 'rfc',
+      flex: 1,
+      menuDisabled: true,
+    },
+
+    {
+      text: 'CLABE',
+      sortable: true,
+      dataIndex: 'clabe',
+      flex: 1,
+      menuDisabled: true,
+    },
+
+    {
       text: 'Numeric Ref',
       sortable: true,
       dataIndex: 'numeric_ref',

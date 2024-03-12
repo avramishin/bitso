@@ -7,6 +7,7 @@ import {
   UseGuards,
   Query,
 } from '@nestjs/common';
+
 import { PaymentsService } from './payments.service';
 import { SortDirection } from '../common/enums/sort-direction.enum';
 import { Payment } from './models/payment.model';
@@ -83,7 +84,9 @@ export class PaymentsController {
           .orWhere(`bank_name`, 'like', `%${dto.filter}%`)
           .orWhere(`beneficiary`, 'like', `%${dto.filter}%`)
           .orWhere(`exchange_user_id`, 'like', `%${dto.filter}%`)
-          .orWhere(`bitso_user_id`, 'like', `%${dto.filter}%`)
+          .orWhere(`bitso_payment_id`, 'like', `%${dto.filter}%`)
+          .orWhere(`rfc`, 'like', `%${dto.filter}%`)
+          .orWhere(`clabe`, 'like', `%${dto.filter}%`)
           .orWhere(`notes_ref`, 'like', `%${dto.filter}%`)
           .orWhere(`numeric_ref`, 'like', `%${dto.filter}%`);
       });

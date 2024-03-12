@@ -4,6 +4,14 @@ const api_secret = 'WWXKIAYXI6EDJTG0WN0LDRRYQ4TZ4N5MS1KHZTNCHWP';
 export const config = {
   db: {
     migrate: true,
+    type: 'mysql',
+    host:
+      process.env['DATABASE_HOST'] ||
+      'vakotrade.cxgliye7pvfd.us-east-1.rds.amazonaws.com',
+    user: process.env['DATABASE_USERNAME'] || 'bitso',
+    password: process.env['DATABASE_PASSWORD'] || 'La6no5N2',
+    database: process.env['DATABASE_NAME'] || 'bitso',
+    port: process.env['DATABASE_PORT'] || '3306',
   },
 
   admins: [
