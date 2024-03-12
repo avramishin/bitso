@@ -6,6 +6,7 @@ import {
   Patch,
   UseGuards,
   Query,
+  BadRequestException,
 } from '@nestjs/common';
 
 import { PaymentsService } from './payments.service';
@@ -20,9 +21,16 @@ import { Admin } from '../admins/models/admin.model';
 import { PaymentType } from './enums/payment-type.enum';
 import { UpdateWithdrawalDto } from './dto/update-withdrawal.dto';
 
+import { EventEmitter2 } from '@nestjs/event-emitter';
+import { PaymentCreatedEvent } from './events/payment-created.event';
+import { PaymentUpdatedEvent } from './events/payment-updated.event';
+
 @Controller()
 export class PaymentsController {
-  constructor(private paymentsService: PaymentsService) {}
+  constructor(
+    private paymentsService: PaymentsService,
+    private eventEmitter: EventEmitter2,
+  ) {}
 
   @Post('v1/payments/withdrawal')
   @UseGuards(BasicAuthGuard)
@@ -45,6 +53,11 @@ export class PaymentsController {
       id: result[0],
     });
 
+    await this.eventEmitter.emitAsync(
+      PaymentCreatedEvent.name,
+      new PaymentCreatedEvent(payment),
+    );
+
     return payment;
   }
 
@@ -58,16 +71,31 @@ export class PaymentsController {
       id: dto.id,
     });
 
-    const affectedRows = await this.paymentsService.updateOne({
-      ...dto,
-      updated_at: new Date().toISOString(),
-      updated_by: admin.username,
-      version: payment.version + 1,
-    } as Payment);
+    const affectedRows = await this.paymentsService
+      .queryBuilder()
+      .update({
+        ...dto,
+        updated_at: new Date().toISOString(),
+        updated_by: admin.username,
+        version: payment.version + 1,
+      })
+      .where({
+        id: dto.id,
+        version: payment.version,
+      });
+
+    if (!affectedRows) {
+      throw new BadRequestException('Payment was not updated!');
+    }
 
     payment = await this.paymentsService.findOneOrFail({
       id: dto.id,
     });
+
+    await this.eventEmitter.emitAsync(
+      PaymentUpdatedEvent.name,
+      new PaymentUpdatedEvent(payment),
+    );
 
     return payment;
   }

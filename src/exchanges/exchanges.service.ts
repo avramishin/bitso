@@ -48,7 +48,6 @@ export class ExchangesService {
     const jwt = await this.cacheManager.wrap<string>(
       `exchange-${exchange.exchange}-jwt`,
       async () => {
-        console.log('get jwt ' + exchange.exchange);
         return (
           await client.request<any>(
             gql`

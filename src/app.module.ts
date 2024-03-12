@@ -10,6 +10,7 @@ import { AdminsModule } from './admins/admins.module';
 import { ExchangesModule } from './exchanges/exchanges.module';
 import { CacheModule } from './cache/cache.module';
 import { isCacheableValue } from './common/is-cacheable-value';
+import { PaymentsProcessor } from './processors/payments.processor';
 
 @Module({
   imports: [
@@ -32,6 +33,6 @@ import { isCacheableValue } from './common/is-cacheable-value';
     ExchangesModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, PaymentsProcessor],
 })
 export class AppModule {}
