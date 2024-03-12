@@ -1,0 +1,160 @@
+.crawler-status-progress {
+    color: #28A02A;
+}
+
+.crawler-status-unknown {
+
+}
+
+.crawler-status-pending {
+    color: #d97e27;
+}
+
+.action-icon {
+    background-image: url('../images/icons/action.png');
+    background-repeat: no-repeat;
+}
+
+.add-icon {
+    background-image: url('../images/icons/add.png');
+    background-repeat: no-repeat;
+}
+
+.edit-icon {
+    background-image: url('../images/icons/edit.png');
+    background-repeat: no-repeat;
+}
+
+.delete-icon {
+    background-image: url('../images/icons/delete.png');
+    background-repeat: no-repeat;
+}
+
+.search-icon {
+    background-image: url('../images/icons/search.png');
+    background-repeat: no-repeat;
+}
+
+.user-icon {
+    background-image: url('../images/icons/user.png');
+    background-repeat: no-repeat;
+}
+
+.users-icon {
+    background-image: url('../images/icons/users.png');
+    background-repeat: no-repeat;
+}
+
+.settings-icon {
+    background-image: url('../images/icons/settings.png');
+    background-repeat: no-repeat;
+}
+
+.check-icon {
+    background-image: url('../images/icons/check.png');
+    background-repeat: no-repeat;
+}
+
+.profile-icon {
+    background-image: url('../images/icons/profile.png');
+    background-repeat: no-repeat;
+}
+
+.reset-icon {
+    background-image: url('../images/icons/reset.png');
+    background-repeat: no-repeat;
+}
+
+.logout-icon {
+    background-image: url('../images/icons/logout.png');
+    background-repeat: no-repeat;
+}
+
+.html-icon {
+    background-image: url('../images/icons/html.png');
+    background-repeat: no-repeat;
+}
+
+.robots-icon {
+    background-image: url('../images/icons/robots.png');
+    background-repeat: no-repeat;
+}
+
+.header-icon {
+    background-image: url('../images/icons/header.png');
+    background-repeat: no-repeat;
+}
+
+.status-ok .x-status-cell,
+.status-ok-tag {
+    background-color: green !important;
+    color: white !important;
+}
+
+.status-error .x-status-cell,
+.status-error-tag {
+    background-color: #B22222 !important;
+    color: white !important;
+}
+
+.status-progress .x-status-cell,
+.status-progress-tag {
+    background-color: black !important;
+    color: white !important;
+}
+
+.status-unknown .x-status-cell,
+.status-unknown-tag {
+    background-color: black !important;
+    color: white !important;
+}
+
+.x-mask, .x-mask.x-mask-gray {
+    background-color: transparent;
+}
+
+.overview-action-column .x-action-col-icon {
+    margin-top: 3px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+#loginWindow .x-docked-bottom {
+    margin-bottom: 10px;
+}
+
+#userEditForm .x-docked-bottom {
+    margin-bottom: 3px;
+}
+
+.x-action-col-icon {
+    height: 16px;
+    width: 16px;
+}
+
+.check-activate-icon {
+    background-image: url('../images/icons/check-activate.png');
+    background-repeat: no-repeat;
+}
+
+.x-action-col-cell img.check-deactivate {
+    background-image: url('../images/icons/check-deactivate.png');
+    background-repeat: no-repeat;
+    margin-top: 2px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.state-active .x-state-cell,
+.state-active-tag {
+
+}
+
+.state-inactive .x-state-cell,
+.state-inactive-tag {
+    color: firebrick !important;
+}
+
+.column-header-no-border {
+    border-right: 0px solid #ccc !important;
+}

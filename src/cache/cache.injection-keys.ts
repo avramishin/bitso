@@ -1,0 +1,2 @@
+export const CACHE_SERVICE = 'CACHE_SERVICE';
+export const CACHEABLE_FUNC = 'CACHEABLE_FUNC';
