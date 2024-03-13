@@ -1,7 +1,10 @@
+import { uuidv4 } from './common/uuid-v4';
+
 const api_key = 'cfda9da8-1c8a-443a-8a33-da676540fa84';
 const api_secret = 'WWXKIAYXI6EDJTG0WN0LDRRYQ4TZ4N5MS1KHZTNCHWP';
 
 export const config = {
+  app_id: uuidv4().slice(0, 6),
   db: {
     migrate: true,
     type: 'mysql',
@@ -14,10 +17,18 @@ export const config = {
     port: process.env['DATABASE_PORT'] || '3306',
   },
 
+  bitso: {
+    webhook: 'https://webhook.site/182b2027-fd73-4318-9442-933bc75cb2ea',
+  },
+
   admins: [
     {
       username: 'admin',
       password: 'showmethemoney',
+    },
+    {
+      username: 'bitso.admin',
+      password: 'admin',
     },
   ],
 

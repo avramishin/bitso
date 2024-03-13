@@ -12,6 +12,9 @@ Ext.define('SS.common.ExchangeCurrencySelector', {
       fields: ['currency'],
       data: [
         {
+          currency: 'MXN',
+        },
+        {
           currency: 'ARS',
         },
         {

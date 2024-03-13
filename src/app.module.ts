@@ -11,6 +11,8 @@ import { ExchangesModule } from './exchanges/exchanges.module';
 import { CacheModule } from './cache/cache.module';
 import { isCacheableValue } from './common/is-cacheable-value';
 import { PaymentsProcessor } from './processors/payments.processor';
+import { LogsModule } from './logs/logs.module';
+import { HttpModule } from './http/http.module';
 
 @Module({
   imports: [
@@ -31,6 +33,8 @@ import { PaymentsProcessor } from './processors/payments.processor';
     PaymentsModule,
     AdminsModule,
     ExchangesModule,
+    LogsModule,
+    HttpModule,
   ],
   controllers: [AppController],
   providers: [AppService, PaymentsProcessor],
