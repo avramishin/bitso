@@ -102,7 +102,7 @@ export class PaymentsController {
 
   @Get('v1/payments')
   @UseGuards(BasicAuthGuard)
-  async getPayments(@Query() dto: FindPaymentsDto) {
+  async findPayments(@Query() dto: FindPaymentsDto) {
     const query = this.paymentsService.queryBuilder();
 
     if (dto.filter) {

@@ -1,5 +1,6 @@
 import { Knex } from 'knex';
 import { PaymentType } from '../../payments/enums/payment-type.enum';
+import { Parameter } from '../../parameters/models/parameter.model';
 
 async function up(db: Knex) {
   await db.schema.createTable('payments', (table) => {
@@ -25,6 +26,23 @@ async function up(db: Knex) {
     table.dateTime('updated_at').notNullable();
     table.string('updated_by', 100).notNullable();
   });
+
+  await db.schema.createTable('parameters', (table) => {
+    table.increments('id').primary();
+    table.string('name', 255).notNullable().unique();
+    table.text('value').nullable();
+  });
+
+  await db<Parameter>('parameters').insert([
+    {
+      name: 'BITSO_WEBHOOK_URL',
+      value: '',
+    },
+    {
+      name: 'BITSO_WEBHOOK_SECRET',
+      value: '',
+    },
+  ]);
 }
 
 async function down(db: Knex) {}

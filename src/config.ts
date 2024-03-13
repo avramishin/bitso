@@ -9,16 +9,12 @@ export const config = {
   app_id: uuidv4().slice(0, 6),
   db: {
     migrate: true,
-    type: 'mysql',
+    type: 'sqlite',
     host: process.env['DATABASE_HOST'] || '',
     user: process.env['DATABASE_USERNAME'] || '',
     password: process.env['DATABASE_PASSWORD'] || '',
     database: process.env['DATABASE_NAME'] || '',
     port: process.env['DATABASE_PORT'] || '3306',
-  },
-
-  bitso: {
-    webhook: process.env['BITSO_WEBHOOK'],
   },
 
   admins: [

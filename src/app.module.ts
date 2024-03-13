@@ -13,6 +13,7 @@ import { isCacheableValue } from './common/is-cacheable-value';
 import { PaymentsProcessor } from './processors/payments.processor';
 import { LogsModule } from './logs/logs.module';
 import { HttpModule } from './http/http.module';
+import { ParametersModule } from './parameters/parameters.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { HttpModule } from './http/http.module';
     ExchangesModule,
     LogsModule,
     HttpModule,
+    ParametersModule,
   ],
   controllers: [AppController],
   providers: [AppService, PaymentsProcessor],

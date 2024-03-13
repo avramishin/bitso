@@ -2,7 +2,7 @@ Ext.application({
   name: 'SS',
   appFolder: 'ui',
 
-  requires: ['SS.payments.Grid'],
+  requires: ['SS.payments.Grid', 'SS.parameters.Grid'],
 
   lastCtxMenu: null,
 
@@ -32,6 +32,14 @@ Ext.application({
           xtype: 'payments.Grid',
           border: 1,
           layout: 'fit',
+        },
+        {
+          region: 'south',
+          title: 'Parameters',
+          id: 'parametersGrid',
+          xtype: 'parameters.Grid',
+          height: '35%',
+          split: true,
         },
       ],
     });
