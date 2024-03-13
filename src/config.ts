@@ -9,7 +9,7 @@ export const config = {
   app_id: uuidv4().slice(0, 6),
   db: {
     migrate: true,
-    type: 'sqlite',
+    type: 'mysql',
     host: process.env['DATABASE_HOST'] || '',
     user: process.env['DATABASE_USERNAME'] || '',
     password: process.env['DATABASE_PASSWORD'] || '',
