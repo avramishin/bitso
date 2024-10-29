@@ -26,6 +26,10 @@ export const config = {
       username: 'bitso.admin',
       password: 'admin',
     },
+    {
+      username: 'bitso.admin1',
+      password: 'admin1',
+    },
   ],
 
   exchanges: [
